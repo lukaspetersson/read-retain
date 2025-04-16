@@ -13,7 +13,9 @@ if __name__ == "__main__":
 
     comments = extract_pdf_comments(pdf_file)
 
-    prompt = "\n* ".join(comments) + "\n" + ANKI_FROM_COMMENTS + "\nSave it to the Anki deck: " + anki_deck_name
+    comments_text = "* " + "\n* ".join(comments)
+
+    prompt = ANKI_FROM_COMMENTS.format(comments=comments_text, anki_deck_name=anki_deck_name)
     pyperclip.copy(prompt)
     print("Prompt copied to clipboard. Don't forget to also give Claude the PDF.")
 
