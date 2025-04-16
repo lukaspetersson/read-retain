@@ -1,0 +1,19 @@
+from utils import extract_pdf_comments
+from prompts import ANKI_FROM_COMMENTS
+import pyperclip
+import sys
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print(f"Usage: {sys.argv[0]} <PDF path> <anki deck name>")
+        sys.exit(1)
+    
+    pdf_file = sys.argv[1]
+    anki_deck_name = sys.argv[2]
+
+    comments = extract_pdf_comments(pdf_file)
+
+    prompt = "\n* ".join(comments) + "\n" + ANKI_FROM_COMMENTS + "\nSave it to the Anki deck: " + anki_deck_name
+    pyperclip.copy(prompt)
+    print("Prompt copied to clipboard. Don't forget to also give Claude the PDF.")
+
