@@ -11,7 +11,10 @@ def extract_pdf_comments(pdf_path):
             text = page.get_text("text", clip=rect)
             if len(content) == 0 or len(text.strip()) == 0:
                 continue
-            comment_text = f"Comment on page {page_num}: {content}\nAssociated text: {text.strip()}"
+            if content.lower().strip() == "ok" or content.lower().strip() == "oh":
+                comment_text = f"Highlighted text on page {page_num}: {text.strip()}"
+            else:
+                comment_text = f"Comment on page {page_num}: {content}\nAssociated text: {text.strip()}"
             comments.append(comment_text)
     
     doc.close()
