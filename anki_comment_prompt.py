@@ -15,8 +15,8 @@ if __name__ == "__main__":
 
     comments_text = "* " + "\n* ".join(comments)
 
-    #prompt = ANKI_FROM_COMMENTS_CLAUDE.format(comments=comments_text, anki_deck_name=anki_deck_name)
-    prompt = ANKI_FROM_COMMENTS_OTHER.format(comments=comments_text)
+    prompt = ANKI_FROM_COMMENTS_CLAUDE.format(comments=comments_text, anki_deck_name=anki_deck_name)
+    #prompt = ANKI_FROM_COMMENTS_OTHER.format(comments=comments_text)
     pyperclip.copy(prompt)
     print("Prompt copied to clipboard. Don't forget to also give Claude the PDF.")
 
