@@ -11,6 +11,8 @@ If a label start with "front:" use it as the front.
 
 Make each card stand alone.
 
+For the back, create first a super short answer (does not need to be a complete answer, its for quick recall) and then a new line followed by a  more detailed answer.
+
 Make sure you get the essence of the comment/highlight. To do this it is important to understand the full text, especially the parts surrounding the highlighted text. Make sure that the answers are correct.
 
 Eventually, save it to the Anki deck named: "{anki_deck_name}", but before you create the flashcards, print them out so I can review them. Only when I say "go" should you use your tools to create the flashcards and save them to the Anki deck.
